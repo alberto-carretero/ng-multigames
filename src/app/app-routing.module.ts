@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'rockpaperscissor',
-    loadChildren: () => import('./rock-paper-scissor-module/rock-paper-scissor.module').then((m) => m.RockPaperScissorModule),
+    loadChildren: () => import('./modules/rock-paper-scissor-module/rock-paper-scissor.module').then((m) => m.RockPaperScissorModule),
   },
   { path: '**', redirectTo: '' },
 ];

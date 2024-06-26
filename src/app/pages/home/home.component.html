@@ -1,2 +1,8 @@
-<p>home works!</p>
-<h1>{{ 'saludo' | translate }}</h1>
+<div class="home vh-100">
+  <section class="home_games-list">
+    <app-games-card [gamesList]="gamesList"></app-games-card>
+  </section>
+  <app-general-settings></app-general-settings>
+</div>
+
+<!-- https://mugan86.medium.com/crear-juego-piedra-papel-o-tijera-en-angular-6695126e1119 -->
