@@ -1,0 +1,11 @@
+<h1>TEST</h1>
+<h1>TEST</h1>
+
+<select class="form-select" (change)="switchLanguage($event)">
+  <option value="en">English</option>
+  <option value="es" selected>Español</option>
+</select>
+
+<h1>{{ 'saludo' | translate }}</h1>
+
+<router-outlet></router-outlet>
