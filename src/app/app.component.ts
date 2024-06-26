@@ -7,10 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'multigames';
-
   constructor(private translate: TranslateService) {
-    translate.setDefaultLang('es');
+    this.translate.setDefaultLang('es');
   }
 
   public switchLanguage(event: any) {
