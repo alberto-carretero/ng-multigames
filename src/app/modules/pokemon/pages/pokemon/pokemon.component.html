@@ -1,0 +1,16 @@
+<div class="pokemon vh-100 d-flex justify-content-start align-items-center flex-column">
+  <img class="pokemon__logo mt-4" src="assets/images/pokemon/logo.png" />
+  <h1 class="pokemon__title fs-7 fw-bold mt-3">{{ 'games.pokemon.title' | translate }}</h1>
+  <app-board
+    *ngIf="!loading; else loadingTmpl"
+    [pokemon]="pokemon"
+    [lives]="lives"
+    [score]="score"
+    (isSuccessful)="nextPokemon($event)"
+    (isFinished)="endGame()"
+  ></app-board>
+</div>
+<ng-template #loadingTmpl>
+  <app-loading></app-loading>
+</ng-template>
+<app-end-game *ngIf="isFinished" [score]="score"></app-end-game>

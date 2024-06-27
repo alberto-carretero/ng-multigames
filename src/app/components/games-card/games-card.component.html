@@ -1,10 +1,13 @@
-<div *ngIf="gamesList | async as gamesList" class="games_card">
-  <div *ngFor="let game of gamesList" class="card" style="width: 18rem">
-    <img src="..." class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div *ngIf="gamesList | async as gamesList" class="container w-100 align-items-center justify-content-center">
+  <div class="games-card row align-items-center justify-content-center">
+    <div *ngFor="let game of gamesList" class="card col-3 m-3 p-3" style="width: 18rem">
+      <img src="{{ game.imageUrl }}" class="card-img-top" alt="{{ game.title }}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ game.title }}</h5>
+        <p class="card-text">{{ game.description }}</p>
+        <a routerLink="{{ game.url }}" class="btn btn-primary">{{ 'games.play' | translate }}</a>
+      </div>
     </div>
   </div>
+  <app-spinner *ngIf="loading | async"></app-spinner>
 </div>

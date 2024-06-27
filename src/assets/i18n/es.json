@@ -1,7 +1,21 @@
 {
+  "generalSettings": "Configuración general",
   "language": "Idioma",
+  "spanish": "Español",
+  "english": "Inglés",
   "mode": {
     "dark": "Modo noche",
     "light": "Modo día"
+  },
+  "multigames": "Juegos",
+  "games": {
+    "play": "Jugar",
+    "pokemon": {
+      "title": "Adivina el pokemon",
+      "score": "Puntuación",
+      "totalScore": "Puntuación total",
+      "gameOver": "Fin del juego",
+      "newGame": "Nuevo juego"
+    }
   }
 }

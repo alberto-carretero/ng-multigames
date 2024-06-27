@@ -1,17 +1,20 @@
 [
   {
-    "imageUrl": "",
-    "title": "",
-    "description": ""
+    "imageUrl": "assets/images/rock-paper-scissors/rock-paper-scissors.jpg",
+    "url": "/rockpaperscissor",
+    "title": "Piedra/papel/tijera",
+    "description": "Esta es la descripcion del Juego 1"
   },
   {
-    "imageUrl": "",
-    "title": "",
-    "description": ""
+    "imageUrl": "assets/images/checkers.jpg",
+    "url": "/checkers",
+    "title": "Damas",
+    "description": "Esta es la descripcion del Juego 2"
   },
   {
-    "imageUrl": "",
-    "title": "",
-    "description": ""
+    "imageUrl": "assets/images/pokemon/pokemon.jpg",
+    "url": "/pokemon",
+    "title": "Pokemon",
+    "description": "Esta es la descripcion del Juego 3"
   }
 ]

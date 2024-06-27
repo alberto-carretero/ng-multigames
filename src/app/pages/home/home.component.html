@@ -1,6 +1,10 @@
-<div class="home vh-100">
-  <section class="home_games-list">
-    <app-games-card [gamesList]="gamesList"></app-games-card>
+<div class="home">
+  <div class="p-2 position-absolute top-0 end-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <i class="bi bi-gear fs-5"></i>
+  </div>
+  <h1 class="d-flex justify-content-center mt-5">{{ 'multigames' | translate }}</h1>
+  <section class="home__games-list">
+    <app-games-card [gamesList]="gamesList" [loading]="loading"></app-games-card>
   </section>
   <app-general-settings></app-general-settings>
 </div>

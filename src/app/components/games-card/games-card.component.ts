@@ -9,4 +9,5 @@ import { IGameList } from 'src/app/models/interfaces';
 })
 export class GamesCardComponent {
   @Input() gamesList: BehaviorSubject<IGameList[]> = new BehaviorSubject([] as IGameList[]);
+  @Input() loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
 }

@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'rockpaperscissor',
     loadChildren: () => import('./modules/rock-paper-scissor-module/rock-paper-scissor.module').then((m) => m.RockPaperScissorModule),
   },
+  {
+    path: 'pokemon',
+    loadChildren: () => import('./modules/pokemon/pokemon.module').then((m) => m.PokemonModule),
+  },
   { path: '**', redirectTo: '' },
 ];
 

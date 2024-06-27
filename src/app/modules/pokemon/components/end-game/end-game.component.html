@@ -1,0 +1,9 @@
+<div class="end-game">
+  <img class="end-game__logo" src="assets/images/pokemon/logo.png" />
+  <h1 class="end-game__title">{{ 'games.pokemon.gameOver' | translate }}</h1>
+  <div class="end-game__score">
+    <span>{{ 'games.pokemon.totalScore' | translate }}</span>
+    <span>{{ score }}</span>
+  </div>
+  <app-button [name]="'games.pokemon.newGame' | translate" (click)="newGame()"></app-button>
+</div>

@@ -8,13 +8,14 @@ import { AppComponent } from './app.component';
 import { GamesCardComponent } from './components/games-card/games-card.component';
 import { GeneralSettingsComponent } from './components/general-settings/general-settings.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GeneralSettingsComponent, GamesCardComponent],
+  declarations: [AppComponent, HomeComponent, GeneralSettingsComponent, GamesCardComponent, SpinnerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

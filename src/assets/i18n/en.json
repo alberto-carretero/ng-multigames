@@ -1,7 +1,21 @@
 {
+  "generalSettings": "General settings",
   "language": "Language",
+  "spanish": "Spanish",
+  "english": "English",
   "mode": {
     "dark": "Dark mode",
     "light": "Light mode"
+  },
+  "multigames": "Games",
+  "games": {
+    "play": "Play",
+    "pokemon": {
+      "title": "Who is?",
+      "score": "Score",
+      "total": "Total score",
+      "gameOver": "Game over",
+      "newGame": "New Game"
+    }
   }
 }
