@@ -1,22 +1,31 @@
-<div class="board">
-  <div class="board__pokemon">
-    <app-pokemon-image [pokemon]="pokemon" [hasBeenSuccessful]="hasBeenSuccessful"></app-pokemon-image>
+<div class="board vh-100 d-flex align-items-center flex-column">
+  <!-- justify-content-between -->
+  <div class="board__title">
+    <h1 class="fw-bold mb-3 text-center">{{ 'games.pokemon.title' | translate }}</h1>
   </div>
-  <div class="board__buttons">
-    <app-button
-      *ngFor="let option of buttonsOptions"
-      [name]="option"
-      [disabled]="disableButtons"
-      (pokemonSelected)="checkSelection($event)"
-    ></app-button>
-  </div>
-  <div class="board__lives-score">
-    <div class="board__lives">
-      <app-lives *ngFor="let live of lives"></app-lives>
+  <ng-container *ngIf="!(loading | async)">
+    <div class="board__pokemon">
+      <app-pokemon-image [pokemon]="pokemon" [hasBeenSuccessful]="hasBeenSuccessful"></app-pokemon-image>
     </div>
-    <div class="board__score">
-      <span>{{ 'games.pokemon.score' | translate }}</span>
-      <span>{{ score }}</span>
+
+    <div class="board__buttons">
+      <app-button
+        *ngFor="let option of buttonsOptions"
+        [name]="option"
+        [disabled]="disableButtons"
+        (pokemonSelected)="checkSelection($event)"
+      ></app-button>
     </div>
-  </div>
+    <div class="board__lives-score d-flex align-items-center justify-content-center p-3">
+      <div class="board__lives mx-2">
+        <app-lives *ngFor="let live of lives"></app-lives>
+      </div>
+      <div class="board__score text-center">
+        <span>{{ 'games.pokemon.score' | translate }}</span>
+        <span>{{ score }}</span>
+      </div>
+    </div>
+  </ng-container>
 </div>
+
+<app-loading *ngIf="loading | async"></app-loading>

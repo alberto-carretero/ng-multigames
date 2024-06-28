@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { IPokemon } from 'src/app/models/interfaces';
 import { PokemonService } from '../../services/pokemon.service';
 
@@ -10,9 +10,14 @@ import { PokemonService } from '../../services/pokemon.service';
 })
 export class BoardComponent implements OnInit, OnDestroy {
   // Pokemon data
-  @Input() pokemon: IPokemon = {} as IPokemon;
+  @Input() pokemon: BehaviorSubject<IPokemon> = new BehaviorSubject({} as IPokemon);
+
+  // Loading
+  @Input() loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
   // Lives
   @Input() lives: number[] = [1, 2, 3];
+
   // Score
   @Input() score: number = 0;
 
@@ -40,9 +45,12 @@ export class BoardComponent implements OnInit, OnDestroy {
    */
   ngOnInit(): void {
     this.subscriptions.add(
-      this.pokemonService.getPokemonNames().subscribe((pokemonsNames: string[]) => {
-        this.setPokemonButtonsOptions(pokemonsNames);
-      })
+      this.pokemon.subscribe((pokemon: IPokemon) => {
+        if (Object.keys(pokemon).length !== 0) {
+          this.reset();
+          this.setPokemonButtonsOptions();
+        }
+      }),
     );
   }
 
@@ -57,12 +65,13 @@ export class BoardComponent implements OnInit, OnDestroy {
    * Checks whether the user has been successful or not
    * @param pokemonSelected Pokemon selected
    */
-  public checkSelection(pokemonSelected: any): void {
-    if (this.pokemon.name === pokemonSelected) {
+  public checkSelection(pokemonSelected: string): void {
+    if (this.pokemon.getValue().name === pokemonSelected) {
       this.hasBeenSuccessful = true;
       this.disableButtons = true;
       this.score++;
       setTimeout(() => {
+        this.loading.next(true);
         this.nextPokemon(this.score);
       }, 1000);
     } else {
@@ -77,28 +86,27 @@ export class BoardComponent implements OnInit, OnDestroy {
    * Creates the button options randomly
    * @param pokemonNames Pokemon button options
    */
-  private async setPokemonButtonsOptions(pokemonNames: string[]): Promise<void> {
-    try {
-      let pokemonIds: number[] = [];
-      let currentPokemonId: number = this.pokemon.id;
+  private async setPokemonButtonsOptions(): Promise<void> {
+    const pokemonNames: string[] = this.pokemonService.pokemonNames;
 
-      pokemonIds.push(currentPokemonId);
+    let pokemonIds: number[] = [];
+    let currentPokemonId: number = this.pokemon.getValue().id;
 
-      for (let index = 0; index < 2; index++) {
-        currentPokemonId = await this.getRandomNumber();
+    pokemonIds.push(currentPokemonId);
 
-        if (!pokemonIds.includes(currentPokemonId)) {
-          pokemonIds.push(currentPokemonId);
-        } else {
-          index = index > 0 ? index - 1 : 0;
-        }
+    for (let index = 0; index < 2; index++) {
+      currentPokemonId = await this.getRandomNumber();
+
+      if (!pokemonIds.includes(currentPokemonId)) {
+        pokemonIds.push(currentPokemonId);
+      } else {
+        index = index > 0 ? index - 1 : 0;
       }
-
-      pokemonIds = pokemonIds.sort();
-      this.setPokemonsNames(pokemonNames, pokemonIds);
-    } catch (error) {
-      console.log('🚀 ~ file: board.component.ts ~ line 57 ~ BoardComponent ~ getPokemonButtonsOptions ~ error', error);
     }
+
+    pokemonIds = pokemonIds.sort();
+    console.log('🚀 ~ BoardComponent ~ setPokemonButtonsOptions ~ pokemonIds:', pokemonIds);
+    this.setPokemonsNames(pokemonNames, pokemonIds);
   }
 
   /**
@@ -134,5 +142,11 @@ export class BoardComponent implements OnInit, OnDestroy {
    */
   private endGame(): void {
     this.isFinished.emit();
+  }
+
+  private reset() {
+    this.buttonsOptions = [];
+    this.disableButtons = false;
+    this.hasBeenSuccessful = false;
   }
 }

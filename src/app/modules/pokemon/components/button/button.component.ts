@@ -21,6 +21,7 @@ export class ButtonComponent {
    * @param event Selected button event
    */
   public getSelection(event: any): void {
+    console.log('🚀 ~ ButtonComponent ~ getSelection ~ event:', event);
     this.pokemonSelected.emit(event.target.value);
   }
 }

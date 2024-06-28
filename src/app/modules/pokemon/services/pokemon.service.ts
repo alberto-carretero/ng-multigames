@@ -8,6 +8,8 @@ import { IPokemon } from 'src/app/models/interfaces';
   providedIn: 'root',
 })
 export class PokemonService {
+  public pokemonNames: string[] = [];
+
   private baseUrl: string = 'https://pokeapi.co/api/v2/pokemon';
 
   constructor(private http: HttpClient) {}
@@ -20,6 +22,10 @@ export class PokemonService {
   // Request to web api to get the pokemon names
   public getPokemonNames(): Observable<string[]> {
     return this.http.get<string[]>('./assets/games/pokemon/pokemon-names.json');
+  }
+
+  public setPokemonNames(pokemonNames: string[]) {
+    this.pokemonNames = pokemonNames;
   }
 
   /**
