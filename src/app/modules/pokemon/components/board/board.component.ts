@@ -11,13 +11,10 @@ import { PokemonService } from '../../services/pokemon.service';
 export class BoardComponent implements OnInit, OnDestroy {
   // Pokemon data
   @Input() pokemon: BehaviorSubject<IPokemon> = new BehaviorSubject({} as IPokemon);
-
   // Loading
   @Input() loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
   // Lives
   @Input() lives: number[] = [1, 2, 3];
-
   // Score
   @Input() score: number = 0;
 
@@ -67,8 +64,8 @@ export class BoardComponent implements OnInit, OnDestroy {
    */
   public checkSelection(pokemonSelected: string): void {
     if (this.pokemon.getValue().name === pokemonSelected) {
-      this.hasBeenSuccessful = true;
       this.disableButtons = true;
+      this.hasBeenSuccessful = true;
       this.score++;
       setTimeout(() => {
         this.loading.next(true);
@@ -105,7 +102,6 @@ export class BoardComponent implements OnInit, OnDestroy {
     }
 
     pokemonIds = pokemonIds.sort();
-    console.log('🚀 ~ BoardComponent ~ setPokemonButtonsOptions ~ pokemonIds:', pokemonIds);
     this.setPokemonsNames(pokemonNames, pokemonIds);
   }
 
@@ -144,6 +140,9 @@ export class BoardComponent implements OnInit, OnDestroy {
     this.isFinished.emit();
   }
 
+  /**
+   * Reset initial values
+   */
   private reset() {
     this.buttonsOptions = [];
     this.disableButtons = false;

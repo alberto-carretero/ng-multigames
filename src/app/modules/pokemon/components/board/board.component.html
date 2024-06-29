@@ -1,14 +1,10 @@
 <div class="board vh-100 d-flex align-items-center flex-column">
-  <!-- justify-content-between -->
-  <div class="board__title">
-    <h1 class="fw-bold mb-3 text-center">{{ 'games.pokemon.title' | translate }}</h1>
-  </div>
   <ng-container *ngIf="!(loading | async)">
-    <div class="board__pokemon">
+    <div class="board__pokemon d-flex my-4">
       <app-pokemon-image [pokemon]="pokemon" [hasBeenSuccessful]="hasBeenSuccessful"></app-pokemon-image>
     </div>
 
-    <div class="board__buttons">
+    <div class="board__buttons d-flex">
       <app-button
         *ngFor="let option of buttonsOptions"
         [name]="option"
@@ -16,11 +12,11 @@
         (pokemonSelected)="checkSelection($event)"
       ></app-button>
     </div>
-    <div class="board__lives-score d-flex align-items-center justify-content-center p-3">
-      <div class="board__lives mx-2">
+    <div class="d-flex align-items-center justify-content-center p-2">
+      <div class="mx-2">
         <app-lives *ngFor="let live of lives"></app-lives>
       </div>
-      <div class="board__score text-center">
+      <div class="board__score d-flex text-center my-2 fw-bold fs-5">
         <span>{{ 'games.pokemon.score' | translate }}</span>
         <span>{{ score }}</span>
       </div>

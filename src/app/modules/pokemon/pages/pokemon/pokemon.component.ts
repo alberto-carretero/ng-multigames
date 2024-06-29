@@ -11,7 +11,6 @@ import { PokemonService } from '../../services/pokemon.service';
 })
 export class PokemonComponent implements OnInit, OnDestroy {
   // Pokemon data
-  // public pokemon: IPokemon = {} as IPokemon;
   public pokemon: BehaviorSubject<IPokemon> = new BehaviorSubject({} as IPokemon);
 
   // Lives
@@ -21,7 +20,6 @@ export class PokemonComponent implements OnInit, OnDestroy {
   public score: number = 0;
 
   // Boolean to inform when the game can be initialised
-  // public loading: boolean = true;
   public loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   // Boolean to inform when the game is finished
@@ -84,7 +82,6 @@ export class PokemonComponent implements OnInit, OnDestroy {
    */
   private async startGame(): Promise<void> {
     this.loading.next(true);
-    // try {
     const pokemonId = await this.pokemonService.generateRandomNumber();
 
     if (!this.pokemonsShown.includes(pokemonId)) {
@@ -103,9 +100,5 @@ export class PokemonComponent implements OnInit, OnDestroy {
     } else {
       this.startGame();
     }
-    // } catch (error) {
-    //   this.loading = true;
-    //   console.log('🚀 ~ file: app.component.ts ~ line 50 ~ AppComponent ~ startGame ~ error', error);
-    // }
   }
 }

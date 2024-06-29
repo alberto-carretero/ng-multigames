@@ -11,9 +11,8 @@
   "games": {
     "play": "Play",
     "pokemon": {
-      "title": "Who is?",
       "score": "Score",
-      "total": "Total score",
+      "totalScore": "Total score",
       "gameOver": "Game over",
       "newGame": "New Game"
     }
