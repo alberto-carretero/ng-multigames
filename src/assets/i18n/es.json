@@ -10,7 +10,18 @@
   "multigames": "Juegos",
   "games": {
     "play": "Jugar",
+    "rockPaperScissor": {
+      "title": "Piedra/papel/tijera",
+      "description": "Esta es la descripcion del Juego 1"
+    },
+
+    "checkers": {
+      "title": "Damas",
+      "description": "Esta es la descripcion del Juego 2"
+    },
     "pokemon": {
+      "title": "Pokemon",
+      "description": "Adivina qué pokémon se esconde tras la sombra",
       "score": "Puntuación",
       "totalScore": "Puntuación total",
       "gameOver": "Fin del juego",

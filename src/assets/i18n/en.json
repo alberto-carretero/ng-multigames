@@ -10,7 +10,17 @@
   "multigames": "Games",
   "games": {
     "play": "Play",
+    "rockPaperScissor": {
+      "title": "Rock/Paper/Scissor",
+      "description": "Win to the computer by choosing the correct option"
+    },
+    "checkers": {
+      "title": "Checkers",
+      "description": "This is an example"
+    },
     "pokemon": {
+      "title": "Pokemon",
+      "description": "Guess which pokemon is hiding behind the shadow",
       "score": "Score",
       "totalScore": "Total score",
       "gameOver": "Game over",
