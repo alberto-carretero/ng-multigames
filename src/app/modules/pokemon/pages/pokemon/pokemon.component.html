@@ -1,4 +1,5 @@
 <div class="pokemon container-fluid vh-100 d-flex flex-column">
+  <i class="pokemon__back bi bi-x-circle position-absolute top-0 end-0 fs-4 p-2" routerLink="/home"></i>
   <app-end-game *ngIf="isFinished" [score]="score"></app-end-game>
   <img class="pokemon__logo position-absolute top-0 start-0 p-3" src="assets/images/pokemon/logo.png" />
   <img class="pokemon__ball position-absolute bottom-0 end-0 p-2" src="assets/images/pokemon/pokeball.png" />

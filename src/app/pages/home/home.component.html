@@ -1,7 +1,5 @@
 <div class="home">
-  <div class="p-2 position-absolute top-0 end-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-    <i class="bi bi-gear fs-5"></i>
-  </div>
+  <app-off-canvas></app-off-canvas>
   <h1 class="d-flex justify-content-center mt-5">{{ 'multigames' | translate }}</h1>
   <section class="home__games-list">
     <app-games-card [gamesList]="gamesList" [loading]="loading"></app-games-card>
