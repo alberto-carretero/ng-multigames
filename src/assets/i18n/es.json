@@ -12,7 +12,9 @@
     "play": "Jugar",
     "rockPaperScissor": {
       "title": "Piedra/papel/tijera",
-      "description": "Esta es la descripcion del Juego 1"
+      "description": "Esta es la descripcion del Juego 1",
+      "user": "Usuario",
+      "device": "Dispositivo"
     },
 
     "checkers": {
@@ -22,10 +24,10 @@
     "pokemon": {
       "title": "Pokemon",
       "description": "Adivina qué pokémon se esconde tras la sombra",
-      "score": "Puntuación",
       "totalScore": "Puntuación total",
       "gameOver": "Fin del juego",
       "newGame": "Nuevo juego"
-    }
+    },
+    "score": "Puntuación"
   }
 }

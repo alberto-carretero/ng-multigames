@@ -1,0 +1,9 @@
+<div class="rock-paper-scissors container-fluid vh-100 p-4">
+  <div class="d-flex justify-content-center align-items-center">
+    <div *ngFor="let option of optionImageUrls" class="rock-paper-scissors__option mx-3 p-3 border border-3 rounded">
+      <img src="/assets/images/rock-paper-scissors/{{ option }}.png" />
+    </div>
+  </div>
+  <app-rock-paper-scissor-score></app-rock-paper-scissor-score>
+  <!-- https://mugan86.medium.com/crear-juego-piedra-papel-o-tijera-en-angular-6695126e1119 -->
+</div>
