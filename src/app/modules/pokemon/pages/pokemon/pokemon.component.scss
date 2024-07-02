@@ -3,7 +3,7 @@
 .pokemon {
   color: $pokemon-blue;
   text-shadow: 2px 2px 2px rgba($color: $pokemon-yellow, $alpha: 0.5);
-  background-image: linear-gradient(180deg, $pokemon-white, $pokemon-yellow);
+  background-image: linear-gradient(180deg, $white, $pokemon-yellow);
 
   &__logo {
     width: 10rem;
