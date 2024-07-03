@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { IPokemon } from 'src/app/models/interfaces';
+import { IPokemon } from '../../models/interfaces';
 
 @Component({
   selector: 'app-pokemon-image',
@@ -26,7 +26,7 @@ export class PokemonImageComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.pokemon.subscribe((pokemon: IPokemon) => {
         if (Object.keys(pokemon).length !== 0) {
-          const imageObject = Object.entries(pokemon.sprites).find((key, value) => key.includes('other') && value !== undefined);
+          const imageObject: any = Object.entries(pokemon.sprites).find((key, value) => key.includes('other') && value !== undefined);
           this.image = imageObject ? imageObject[1].dream_world.front_default : undefined;
         }
       }),

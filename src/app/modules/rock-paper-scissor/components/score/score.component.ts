@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-rock-paper-scissor-score',
@@ -6,4 +6,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./score.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RockPaperScissorScoreComponent {}
+export class RockPaperScissorScoreComponent {
+  @Input() userPoints: number = 0;
+  @Input() comPoints: number = 0;
+}

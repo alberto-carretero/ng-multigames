@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { IPokemon } from 'src/app/models/interfaces';
+import { IPokemon } from '../../models/interfaces';
 import { PokemonService } from '../../services/pokemon.service';
 
 @Component({

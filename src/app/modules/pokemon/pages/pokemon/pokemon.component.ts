@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { IPokemon } from 'src/app/models/interfaces';
+import { IPokemon } from '../../models/interfaces';
 import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
