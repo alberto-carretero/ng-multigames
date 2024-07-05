@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ChoiceType } from '../models/enums';
+import { ChoiceType, GameModeType } from '../models/enums';
 import { IGameStatus } from '../models/interfaces';
 
 @Injectable({
@@ -9,19 +9,21 @@ import { IGameStatus } from '../models/interfaces';
 export class RockPaperScissorService {
   public gameStatus: BehaviorSubject<IGameStatus> = new BehaviorSubject({
     message: 'games.rockPaperScissor.waitingForGame',
-    userPoints: 0,
+    playerOnePoints: 0,
+    playerTwoPoints: 0,
     comPoints: 0,
   });
 
-  getComputerChoice(): string {
+  public currentPlayer: number = 1;
+  public playPlayers: string = '';
+
+  public getComputerChoice(): string {
     const choices = [ChoiceType.ROCK, ChoiceType.PAPER, ChoiceType.SCISSOR];
     const randomChoice = Math.floor(Math.random() * 3);
     return choices[randomChoice];
   }
 
-  game(userChoice: string): void {
-    const playUserComp = userChoice + this.getComputerChoice();
-
+  public game(playUserComp: string, mode: GameModeType): void {
     switch (playUserComp) {
       // User wins
       case `${ChoiceType.ROCK}${ChoiceType.SCISSOR}`:
@@ -29,8 +31,8 @@ export class RockPaperScissorService {
       case `${ChoiceType.PAPER}${ChoiceType.ROCK}`:
         this.gameStatus.next({
           ...this.gameStatus.getValue(),
-          message: 'games.rockPaperScissor.win',
-          userPoints: this.gameStatus.getValue().userPoints + 1,
+          message: mode === GameModeType.COM ? 'games.rockPaperScissor.win' : 'games.rockPaperScissor.winPlayerOne',
+          playerOnePoints: this.gameStatus.getValue().playerOnePoints + 1,
         });
         break;
       // Computer wins
@@ -39,8 +41,9 @@ export class RockPaperScissorService {
       case `${ChoiceType.ROCK}${ChoiceType.PAPER}`:
         this.gameStatus.next({
           ...this.gameStatus.getValue(),
-          message: 'games.rockPaperScissor.lose',
-          comPoints: this.gameStatus.getValue().comPoints + 1,
+          message: mode === GameModeType.COM ? 'games.rockPaperScissor.lose' : 'games.rockPaperScissor.winPlayerTwo',
+          ...(mode === GameModeType.PLAYERS && { playerTwoPoints: this.gameStatus.getValue().playerTwoPoints + 1 }),
+          ...(mode === GameModeType.COM && { comPoints: this.gameStatus.getValue().comPoints + 1 }),
         });
         break;
       // Draw
@@ -50,5 +53,19 @@ export class RockPaperScissorService {
         this.gameStatus.next({ ...this.gameStatus.getValue(), message: 'games.rockPaperScissor.draw' });
         break;
     }
+  }
+
+  public resetGameStatus() {
+    this.gameStatus.next({
+      message: 'games.rockPaperScissor.waitingForGame',
+      playerOnePoints: 0,
+      playerTwoPoints: 0,
+      comPoints: 0,
+    });
+  }
+
+  public resetTwoPlayersCurrentValues() {
+    this.playPlayers = '';
+    this.currentPlayer = 1;
   }
 }

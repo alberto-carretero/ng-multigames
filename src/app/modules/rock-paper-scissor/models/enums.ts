@@ -3,3 +3,8 @@ export enum ChoiceType {
   PAPER = 'paper',
   SCISSOR = 'scissor',
 }
+
+export enum GameModeType {
+  PLAYERS = 'players',
+  COM = 'com',
+}

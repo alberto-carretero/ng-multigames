@@ -1,0 +1,15 @@
+@import '../../../../../assets/scss/variables';
+
+.board {
+  &__option {
+    width: fit-content;
+    cursor: pointer;
+    background-color: $white;
+
+    & > img {
+      width: 100%;
+      max-width: 100px;
+      filter: drop-shadow(5px 5px 4px $black);
+    }
+  }
+}

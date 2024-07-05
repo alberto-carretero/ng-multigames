@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { ChoiceType } from '../../models/enums';
+import { ChoiceType, GameModeType } from '../../models/enums';
 import { RockPaperScissorService } from '../../services/rock-paper-scissor.service';
 
 @Component({
@@ -11,11 +10,20 @@ import { RockPaperScissorService } from '../../services/rock-paper-scissor.servi
 export class RockPaperScissorComponent {
   public optionImageUrls: string[] = [ChoiceType.ROCK, ChoiceType.PAPER, ChoiceType.SCISSOR];
 
-  public loading: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  public selectedMode: GameModeType = GameModeType.COM;
+
+  public modeType = GameModeType;
+
+  public displayMenu: boolean = true;
 
   constructor(public rockPaperScissorService: RockPaperScissorService) {}
 
-  play(userChoice: string): void {
-    this.rockPaperScissorService.game(userChoice);
+  public selectMode(mode: GameModeType) {
+    this.selectedMode = mode;
+    this.displayMenu = false;
+  }
+
+  public showMenu(displayMenu: boolean) {
+    this.displayMenu = displayMenu;
   }
 }

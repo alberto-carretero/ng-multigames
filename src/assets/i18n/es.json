@@ -13,12 +13,19 @@
     "rockPaperScissor": {
       "title": "Piedra/papel/tijera",
       "description": "Esta es la descripcion del Juego 1",
-      "user": "Usuario",
+      "rock": "Piedra",
+      "paper": "Papel",
+      "scissor": "Tijera",
+      "user": "Jugador",
       "device": "Comp.",
+      "player": "Jug. {{ number }}",
       "waitingForGame": "Esperando jugada...",
       "chooseOne": "Selecciona tu jugada",
+      "choosePlayer": "Turno del jugador {{ number }}",
       "win": "¡Has ganado!",
-      "lose": "¡¡Has perdido!!",
+      "winPlayerOne": "Gana el jugador 1",
+      "winPlayerTwo": "Gana el jugador 2",
+      "lose": "¡Has perdido!",
       "draw": "Empate"
     },
 

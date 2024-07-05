@@ -1,5 +1,6 @@
 export interface IGameStatus {
   message: string;
-  userPoints: number;
+  playerOnePoints: number;
+  playerTwoPoints: number;
   comPoints: number;
 }

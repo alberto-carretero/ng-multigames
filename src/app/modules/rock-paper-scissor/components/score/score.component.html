@@ -1,11 +1,15 @@
 <div *ngIf="gameStatus | async as status" class="d-flex align-items-center fs-4 mb-3">
   <i class="bi bi-person"></i>
   <div class="mx-3">
-    {{ 'games.rockPaperScissor.user' | translate }}
+    {{ mode === gameMode.COM ? ('games.rockPaperScissor.user' | translate) : ('games.rockPaperScissor.player' | translate: { number: 1 }) }}
   </div>
-  <div class="score__points">{{ status.userPoints }}</div>
+  <div class="score__points">{{ status.playerOnePoints }}</div>
   <div class="mx-2">/</div>
-  <div class="score__points">{{ status.comPoints }}</div>
-  <div class="mx-3">{{ 'games.rockPaperScissor.device' | translate }}</div>
-  <i class="bi bi-pc-display"></i>
+  <div class="score__points">{{ mode === gameMode.COM ? status.comPoints : status.playerTwoPoints }}</div>
+  <div class="mx-3">
+    {{
+      mode === gameMode.COM ? ('games.rockPaperScissor.device' | translate) : ('games.rockPaperScissor.player' | translate: { number: 2 })
+    }}
+  </div>
+  <i class="bi" [ngClass]="mode === gameMode.COM ? 'bi-pc-display' : 'bi-person'"></i>
 </div>

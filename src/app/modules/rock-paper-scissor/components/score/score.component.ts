@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { GameModeType } from '../../models/enums';
 import { IGameStatus } from '../../models/interfaces';
 
 @Component({
@@ -11,7 +12,11 @@ import { IGameStatus } from '../../models/interfaces';
 export class RockPaperScissorScoreComponent {
   @Input() gameStatus: BehaviorSubject<IGameStatus> = new BehaviorSubject({
     message: 'games.rockPaperScissor.waitingForGame',
-    userPoints: 0,
+    playerOnePoints: 0,
+    playerTwoPoints: 0,
     comPoints: 0,
   });
+  @Input() mode: GameModeType | null = null;
+
+  public gameMode = GameModeType;
 }
