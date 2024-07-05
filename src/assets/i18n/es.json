@@ -14,7 +14,12 @@
       "title": "Piedra/papel/tijera",
       "description": "Esta es la descripcion del Juego 1",
       "user": "Usuario",
-      "device": "Dispositivo"
+      "device": "Comp.",
+      "waitingForGame": "Esperando jugada...",
+      "chooseOne": "Selecciona tu jugada",
+      "win": "¡Has ganado!",
+      "lose": "¡¡Has perdido!!",
+      "draw": "Empate"
     },
 
     "checkers": {
@@ -27,7 +32,6 @@
       "totalScore": "Puntuación total",
       "gameOver": "Fin del juego",
       "newGame": "Nuevo juego"
-    },
-    "score": "Puntuación"
+    }
   }
 }

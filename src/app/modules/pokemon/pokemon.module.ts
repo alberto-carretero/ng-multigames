@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { ExitGameComponent } from 'src/app/components/exit-game/exit-game.component';
 import { BoardComponent } from './components/board/board.component';
 import { ButtonComponent } from './components/button/button.component';
 import { EndGameComponent } from './components/end-game/end-game.component';
@@ -27,6 +28,6 @@ const routes: Routes = [
     LivesComponent,
     EndGameComponent,
   ],
-  imports: [RouterModule.forChild(routes), CommonModule, TranslateModule],
+  imports: [RouterModule.forChild(routes), CommonModule, TranslateModule, ExitGameComponent],
 })
 export class PokemonModule {}

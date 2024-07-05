@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ChoiceType } from '../../models/enums';
+import { RockPaperScissorService } from '../../services/rock-paper-scissor.service';
 
 @Component({
   selector: 'app-rock-paper-scissor',
   templateUrl: './rock-paper-scissor.component.html',
   styleUrls: ['./rock-paper-scissor.component.scss'],
 })
-export class RockPaperScissorComponent implements OnInit {
-  public optionImageUrls: string[] = ['rock', 'paper', 'scissors'];
-  public result!: string;
-  public userPoints: number = 0;
-  public comPoints: number = 0;
+export class RockPaperScissorComponent {
+  public optionImageUrls: string[] = [ChoiceType.ROCK, ChoiceType.PAPER, ChoiceType.SCISSOR];
 
   public loading: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
-  ngOnInit(): void {
-    this.result = 'Esperando jugada...';
+  constructor(public rockPaperScissorService: RockPaperScissorService) {}
+
+  play(userChoice: string): void {
+    this.rockPaperScissorService.game(userChoice);
   }
 }

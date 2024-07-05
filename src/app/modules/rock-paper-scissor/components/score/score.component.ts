@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { IGameStatus } from '../../models/interfaces';
 
 @Component({
   selector: 'app-rock-paper-scissor-score',
@@ -7,6 +9,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RockPaperScissorScoreComponent {
-  @Input() userPoints: number = 0;
-  @Input() comPoints: number = 0;
+  @Input() gameStatus: BehaviorSubject<IGameStatus> = new BehaviorSubject({
+    message: 'games.rockPaperScissor.waitingForGame',
+    userPoints: 0,
+    comPoints: 0,
+  });
 }
