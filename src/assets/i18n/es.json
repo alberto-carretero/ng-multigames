@@ -32,6 +32,7 @@
       "totalScore": "Puntuación total",
       "gameOver": "Fin del juego",
       "newGame": "Nuevo juego"
-    }
+    },
+    "score": "Puntuación"
   }
 }
