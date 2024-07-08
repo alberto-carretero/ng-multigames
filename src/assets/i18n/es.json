@@ -12,7 +12,7 @@
     "play": "Jugar",
     "rockPaperScissor": {
       "title": "Piedra/papel/tijera",
-      "description": "Esta es la descripcion del Juego 1",
+      "description": "Compite contra la CPU o contra un amig@",
       "rock": "Piedra",
       "paper": "Papel",
       "scissor": "Tijera",
@@ -28,11 +28,6 @@
       "lose": "¡Has perdido!",
       "draw": "Empate"
     },
-
-    "checkers": {
-      "title": "Damas",
-      "description": "Esta es la descripcion del Juego 2"
-    },
     "pokemon": {
       "title": "Pokemon",
       "description": "Adivina qué pokémon se esconde tras la sombra",
@@ -41,6 +36,8 @@
       "newGame": "Nuevo juego"
     },
     "hanged": {
+      "title": "Ahorcado",
+      "description": "Adivina la palabra o frase antes de agotar todos intentos",
       "label": "Palabra/Frase:",
       "placeholder": "Introduce un texto...",
       "startButton": "Empezar",

@@ -5,9 +5,9 @@
     "game": "rockPaperScissor"
   },
   {
-    "imageUrl": "assets/images/checkers.jpg",
-    "url": "/checkers",
-    "game": "checkers"
+    "imageUrl": "assets/images/hanged/hanged.jpg",
+    "url": "/hanged",
+    "game": "hanged"
   },
   {
     "imageUrl": "assets/images/pokemon/pokemon.jpg",

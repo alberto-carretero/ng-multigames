@@ -1,0 +1,11 @@
+<div class="d-flex flex-wrap justify-content-center align-items-center mt-4">
+  <button
+    *ngFor="let letter of letters"
+    type="button"
+    class="letter btn btn-outline-secondary m-1"
+    [disabled]="letter.isSelected"
+    (click)="chooseLetter(letter.name)"
+  >
+    {{ letter.name }}
+  </button>
+</div>

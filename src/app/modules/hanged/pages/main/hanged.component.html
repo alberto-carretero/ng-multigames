@@ -1,4 +1,5 @@
 <div class="hanged container-fluid vh-100 d-flex flex-column justify-content-center align-items-center">
   <app-hanged-form *ngIf="!(loading | async)" (start)="play($event)"></app-hanged-form>
   <app-spinner *ngIf="loading | async"></app-spinner>
+  <app-letters></app-letters>
 </div>
