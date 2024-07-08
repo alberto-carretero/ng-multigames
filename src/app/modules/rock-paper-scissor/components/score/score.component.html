@@ -4,12 +4,12 @@
     {{ mode === gameMode.COM ? ('games.rockPaperScissor.user' | translate) : ('games.rockPaperScissor.player' | translate: { number: 1 }) }}
   </div>
   <div class="score__points">{{ status.playerOnePoints }}</div>
-  <div class="mx-2">/</div>
-  <div class="score__points">{{ mode === gameMode.COM ? status.comPoints : status.playerTwoPoints }}</div>
-  <div class="mx-3">
+  <div class="score__baffle mx-2">/</div>
+  <div class="score__player-two score__points">{{ mode === gameMode.COM ? status.comPoints : status.playerTwoPoints }}</div>
+  <div class="score__player-two mx-3">
     {{
       mode === gameMode.COM ? ('games.rockPaperScissor.device' | translate) : ('games.rockPaperScissor.player' | translate: { number: 2 })
     }}
   </div>
-  <i class="bi" [ngClass]="mode === gameMode.COM ? 'bi-pc-display' : 'bi-person'"></i>
+  <i class="score__player-two bi" [ngClass]="mode === gameMode.COM ? 'bi-pc-display' : 'bi-person'"></i>
 </div>

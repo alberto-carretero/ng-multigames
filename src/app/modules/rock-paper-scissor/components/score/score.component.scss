@@ -1,6 +1,18 @@
+@import '../../../../../assets/scss/variables';
+
 .score {
+  &__player-two {
+    color: $rock-paper-scissors-navajowhite;
+  }
+
   &__points {
     width: 20px;
     text-align: center;
+  }
+
+  &__baffle {
+    background: -webkit-linear-gradient($rock-paper-scissors-navajowhite, $white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
