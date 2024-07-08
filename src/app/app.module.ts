@@ -16,7 +16,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GeneralSettingsComponent, GamesCardComponent, SpinnerComponent, OffCanvasComponent],
+  declarations: [AppComponent, HomeComponent, GeneralSettingsComponent, GamesCardComponent, OffCanvasComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,6 +28,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    SpinnerComponent,
   ],
   bootstrap: [AppComponent],
 })

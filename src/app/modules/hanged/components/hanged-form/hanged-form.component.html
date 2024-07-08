@@ -1,0 +1,25 @@
+<div class="hanged-form border border-2 rounded p-5">
+  <form [formGroup]="hangedForm" (ngSubmit)="startGame()">
+    <label for="riddle">{{ 'games.hanged.label' | translate }}</label>
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="{{ 'games.hanged.placeholder' | translate }}"
+        id="riddle"
+        formControlName="riddle"
+      />
+      <button class="btn btn-outline-secondary" type="submit" [disabled]="!hangedForm.valid">
+        {{ 'games.hanged.startButton' | translate }}
+      </button>
+    </div>
+    <span *ngIf="hangedForm.controls['riddle'].invalid && (hangedForm.controls['riddle'].dirty || hangedForm.controls['riddle'].touched)">
+      <span *ngIf="hangedForm.controls['riddle'].hasError('required')" class="text-danger">{{
+        'games.hanged.validators.required' | translate
+      }}</span>
+      <span *ngIf="hangedForm.controls['riddle'].hasError('pattern')" class="text-danger">{{
+        'games.hanged.validators.pattern' | translate
+      }}</span>
+    </span>
+  </form>
+</div>

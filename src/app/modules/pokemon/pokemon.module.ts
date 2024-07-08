@@ -9,7 +9,7 @@ import { EndGameComponent } from './components/end-game/end-game.component';
 import { LivesComponent } from './components/lives/lives.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { PokemonImageComponent } from './components/pokemon-image/pokemon-image.component';
-import { PokemonComponent } from './pages/pokemon/pokemon.component';
+import { PokemonComponent } from './pages/main/pokemon.component';
 
 const routes: Routes = [
   {

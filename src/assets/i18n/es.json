@@ -40,6 +40,15 @@
       "gameOver": "Fin del juego",
       "newGame": "Nuevo juego"
     },
+    "hanged": {
+      "label": "Palabra/Frase:",
+      "placeholder": "Introduce un texto...",
+      "startButton": "Empezar",
+      "validators": {
+        "required": "Es obligatorio introducir un texto",
+        "pattern": "Solo se permiten letras"
+      }
+    },
     "score": "Puntuación"
   }
 }

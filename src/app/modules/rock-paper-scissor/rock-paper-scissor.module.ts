@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ExitGameComponent } from 'src/app/components/exit-game/exit-game.component';
 import { RockPaperScissorBoardComponent } from './components/board/board.component';
 import { RockPaperScissorScoreComponent } from './components/score/score.component';
-import { RockPaperScissorComponent } from './pages/rock-paper-scissor/rock-paper-scissor.component';
+import { RockPaperScissorComponent } from './pages/main/rock-paper-scissor.component';
 
 const routes: Routes = [
   {

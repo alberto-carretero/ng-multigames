@@ -1,0 +1,11 @@
+.hanged-form {
+  min-height: 12rem;
+
+  & .form-control {
+    border: 1px solid #6c757d;
+
+    &:focus {
+      box-shadow: inset 0 -1px 0 transparent;
+    }
+  }
+}

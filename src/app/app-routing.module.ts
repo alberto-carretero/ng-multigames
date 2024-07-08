@@ -17,12 +17,15 @@ const routes: Routes = [
     path: 'pokemon',
     loadChildren: () => import('./modules/pokemon/pokemon.module').then((m) => m.PokemonModule),
   },
+  {
+    path: 'hanged',
+    loadChildren: () => import('./modules/hanged/hanged.module').then((m) => m.HangedModule),
+  },
   { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  // providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
 })
 export class AppRoutingModule {}
