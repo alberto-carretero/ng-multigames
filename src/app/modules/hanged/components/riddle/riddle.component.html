@@ -1,0 +1,7 @@
+<div class="d-flex flex-wrap justify-content-center align-items-center mt-4">
+  <ng-container *ngFor="let letter of lettersRiddle">
+    <div class="riddle text-center mx-2" [class.riddle__letter]="letter.name !== ''">
+      <span [class.riddle__letter--hidden]="!letter.isSelected">{{ letter.name }}</span>
+    </div>
+  </ng-container>
+</div>

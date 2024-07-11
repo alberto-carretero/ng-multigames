@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ILetter } from '../../models/interfaces';
 
 @Component({
@@ -7,6 +7,8 @@ import { ILetter } from '../../models/interfaces';
   styleUrls: ['./letters.component.scss'],
 })
 export class LettersComponent implements OnInit {
+  @Output() selectedLetter: EventEmitter<string> = new EventEmitter<string>();
+
   public letters: ILetter[] = [
     { name: 'A' },
     { name: 'B' },
@@ -42,8 +44,8 @@ export class LettersComponent implements OnInit {
   }
 
   public chooseLetter(selectedLetter: string) {
-    console.log('🚀 ~ LettersComponent ~ chooseLetter ~ selectedLetter:', selectedLetter);
-    // this.letters.find(letter => letter.name === selectedLetter).isSelected = false;
+    this.letters.find((letter) => letter.name === selectedLetter)!.isSelected = true;
+    this.selectedLetter.emit(selectedLetter);
   }
 
   private initializeLetters() {

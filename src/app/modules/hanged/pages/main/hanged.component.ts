@@ -7,9 +7,14 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./hanged.component.scss'],
 })
 export class HangedComponent {
-  public loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  public riddle: BehaviorSubject<string> = new BehaviorSubject('');
+  public selectedLetter: BehaviorSubject<string> = new BehaviorSubject('');
 
   public play(riddle: string) {
-    this.loading.next(true);
+    this.riddle.next(riddle);
+  }
+
+  public checkSelection(selectedLetter: string) {
+    this.selectedLetter.next(selectedLetter.toLowerCase());
   }
 }
