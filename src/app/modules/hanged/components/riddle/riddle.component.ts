@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { ILetter } from '../../models/interfaces';
+import { HangedPhaseEnum } from '../../models/enums';
+import { IHanged } from '../../models/interfaces';
 
 @Component({
   selector: 'app-riddle',
@@ -8,31 +9,28 @@ import { ILetter } from '../../models/interfaces';
   styleUrls: ['./riddle.component.scss'],
 })
 export class RiddleComponent implements OnInit, OnDestroy {
-  @Input() riddle: BehaviorSubject<string> = new BehaviorSubject('');
-  @Input() selectedLetter: BehaviorSubject<string> = new BehaviorSubject('');
-
-  public lettersRiddle: ILetter[] = [];
+  @Input() hangedData: BehaviorSubject<IHanged> = new BehaviorSubject({} as IHanged);
 
   private subscriptions = new Subscription();
 
   ngOnInit(): void {
     this.subscriptions.add(
-      this.riddle.subscribe((riddle: string) => {
-        riddle.split('').forEach((letter) => {
-          this.lettersRiddle = [...this.lettersRiddle, { name: !letter.includes(' ') ? letter.toLowerCase() : '' }];
-        });
-      }),
-    );
-
-    this.subscriptions.add(
-      this.selectedLetter.subscribe((selectedLetter: string) => {
-        if (selectedLetter)
-          this.lettersRiddle.filter((letter) => letter.name === selectedLetter).map((foundLetter) => (foundLetter.isSelected = true));
+      this.hangedData.subscribe((data: IHanged) => {
+        if (data.phase === HangedPhaseEnum.INIT) this.setLettersRiddle(data.riddle);
       }),
     );
   }
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
+  }
+
+  private setLettersRiddle(riddle: string) {
+    riddle.split('').forEach((letter) => {
+      this.hangedData.getValue().lettersRiddle = [
+        ...this.hangedData.getValue().lettersRiddle,
+        { name: !letter.includes(' ') ? letter.toLowerCase() : '' },
+      ];
+    });
   }
 }

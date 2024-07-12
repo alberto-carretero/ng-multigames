@@ -1,5 +1,12 @@
 <div class="hanged container-fluid vh-100 d-flex flex-column justify-content-center align-items-center">
-  <app-hanged-form *ngIf="!(riddle | async)" (start)="play($event)"></app-hanged-form>
-  <app-riddle *ngIf="riddle | async" [riddle]="riddle" [selectedLetter]="selectedLetter"></app-riddle>
-  <app-letters *ngIf="riddle | async" (selectedLetter)="checkSelection($event)"></app-letters>
+  <app-hanged-form *ngIf="!(hangedData | async)?.riddle" (start)="play($event)"></app-hanged-form>
+  <app-riddle
+    *ngIf="(hangedData | async)?.riddle && (hangedData | async)?.phase !== hangedPhase.END"
+    [hangedData]="hangedData"
+  ></app-riddle>
+  <app-letters
+    *ngIf="(hangedData | async)?.riddle && (hangedData | async)?.phase !== hangedPhase.END"
+    [hangedData]="hangedData"
+  ></app-letters>
+  <ng-container *ngIf="(hangedData | async)?.phase === hangedPhase.END">FINNNNNNNNNNNNN</ng-container>
 </div>
