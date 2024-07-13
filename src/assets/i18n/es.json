@@ -22,18 +22,14 @@
       "waitingForGame": "Esperando jugada...",
       "chooseOne": "Selecciona tu jugada",
       "choosePlayer": "Turno del jugador {{ number }}",
-      "win": "¡Has ganado!",
       "winPlayerOne": "Gana el jugador 1",
       "winPlayerTwo": "Gana el jugador 2",
-      "lose": "¡Has perdido!",
       "draw": "Empate"
     },
     "pokemon": {
       "title": "Pokemon",
       "description": "Adivina qué pokémon se esconde tras la sombra",
-      "totalScore": "Puntuación total",
-      "gameOver": "Fin del juego",
-      "newGame": "Nuevo juego"
+      "totalScore": "Puntuación total"
     },
     "hanged": {
       "title": "Ahorcado",
@@ -46,6 +42,10 @@
         "pattern": "Solo se permiten letras"
       }
     },
-    "score": "Puntuación"
+    "win": "¡Has ganado!",
+    "lose": "¡Has perdido!",
+    "gameOver": "Fin del juego",
+    "score": "Puntuación",
+    "newGame": "Nuevo juego"
   }
 }

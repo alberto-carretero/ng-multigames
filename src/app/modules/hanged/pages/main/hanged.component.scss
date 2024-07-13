@@ -1,0 +1,10 @@
+@import '../../../../../assets/scss/variables';
+
+.hanged {
+  background-image: url('../../../../../assets/images/hanged/background.svg');
+  background-size: contain;
+
+  &::ng-deep app-exit-game i {
+    color: $white;
+  }
+}

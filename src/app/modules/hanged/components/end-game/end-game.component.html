@@ -1,0 +1,5 @@
+<div class="vh-100 d-flex justify-content-center align-items-center flex-column">
+  <h1 class="fs-1 fw-bold">{{ 'games.gameOver' | translate }}</h1>
+  <p class="fs-3">{{ attempts > 0 ? ('games.win' | translate) : ('games.lose' | translate) }}</p>
+  <button type="button" class="btn btn-outline-dark m-1" (click)="newGame()">{{ 'games.newGame' | translate }}</button>
+</div>

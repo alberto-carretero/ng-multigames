@@ -31,7 +31,7 @@ export class RockPaperScissorService {
       case `${ChoiceType.PAPER}${ChoiceType.ROCK}`:
         this.gameStatus.next({
           ...this.gameStatus.getValue(),
-          message: mode === GameModeType.COM ? 'games.rockPaperScissor.win' : 'games.rockPaperScissor.winPlayerOne',
+          message: mode === GameModeType.COM ? 'games.win' : 'games.rockPaperScissor.winPlayerOne',
           playerOnePoints: this.gameStatus.getValue().playerOnePoints + 1,
         });
         break;
@@ -41,7 +41,7 @@ export class RockPaperScissorService {
       case `${ChoiceType.ROCK}${ChoiceType.PAPER}`:
         this.gameStatus.next({
           ...this.gameStatus.getValue(),
-          message: mode === GameModeType.COM ? 'games.rockPaperScissor.lose' : 'games.rockPaperScissor.winPlayerTwo',
+          message: mode === GameModeType.COM ? 'games.lose' : 'games.rockPaperScissor.winPlayerTwo',
           ...(mode === GameModeType.PLAYERS && { playerTwoPoints: this.gameStatus.getValue().playerTwoPoints + 1 }),
           ...(mode === GameModeType.COM && { comPoints: this.gameStatus.getValue().comPoints + 1 }),
         });

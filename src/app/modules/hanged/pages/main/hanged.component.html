@@ -1,12 +1,12 @@
 <div class="hanged container-fluid vh-100 d-flex flex-column justify-content-center align-items-center">
+  <app-exit-game *ngIf="!(hangedData | async)?.riddle || (hangedData | async)?.phase === hangedPhase.END"></app-exit-game>
   <app-hanged-form *ngIf="!(hangedData | async)?.riddle" (start)="play($event)"></app-hanged-form>
-  <app-riddle
-    *ngIf="(hangedData | async)?.riddle && (hangedData | async)?.phase !== hangedPhase.END"
-    [hangedData]="hangedData"
-  ></app-riddle>
-  <app-letters
-    *ngIf="(hangedData | async)?.riddle && (hangedData | async)?.phase !== hangedPhase.END"
-    [hangedData]="hangedData"
-  ></app-letters>
-  <ng-container *ngIf="(hangedData | async)?.phase === hangedPhase.END">FINNNNNNNNNNNNN</ng-container>
+  <ng-container *ngIf="(hangedData | async)?.riddle && (hangedData | async)?.phase !== hangedPhase.END">
+    <app-puppet></app-puppet>
+    <app-riddle [hangedData]="hangedData"></app-riddle>
+    <app-letters [hangedData]="hangedData"></app-letters>
+  </ng-container>
+  <ng-container *ngIf="(hangedData | async)?.phase === hangedPhase.END"
+    ><app-end-game [attempts]="(hangedData | async)?.attempts!"></app-end-game
+  ></ng-container>
 </div>
