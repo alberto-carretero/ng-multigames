@@ -1,7 +1,40 @@
 .puppet {
+  position: relative;
+  height: 150px;
+  width: 150px;
+
+  &__piece {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+  }
+
   &__head {
     background-image: url('../../../../../assets/images/hanged/head.svg');
-    width: 100px;
-    height: 100px;
+  }
+
+  &__body {
+    background-image: url('../../../../../assets/images/hanged/body.svg');
+  }
+
+  &__arm {
+    &--left {
+      background-image: url('../../../../../assets/images/hanged/arm-left.svg');
+    }
+
+    &--right {
+      background-image: url('../../../../../assets/images/hanged/arm-right.svg');
+    }
+  }
+
+  &__leg {
+    &--left {
+      background-image: url('../../../../../assets/images/hanged/leg-left.svg');
+    }
+
+    &--right {
+      background-image: url('../../../../../assets/images/hanged/leg-right.svg');
+    }
   }
 }
