@@ -1,8 +1,9 @@
 <div class="puppet d-flex justify-content-center align-items-center">
-  <div class="puppet__body puppet__piece"></div>
-  <div class="puppet__arm puppet__arm--left puppet__piece"></div>
-  <div class="puppet__arm puppet__arm--right puppet__piece"></div>
-  <div class="puppet__leg puppet__leg--left puppet__piece"></div>
-  <div class="puppet__leg puppet__leg--right puppet__piece"></div>
-  <div class="puppet__head puppet__piece"></div>
+  <app-spinner *ngIf="loading"></app-spinner>
+  <img #body class="puppet__piece" [class.puppet__piece--ko]="attempts < 1" />
+  <img #armLeft class="puppet__piece" [class.puppet__piece--ko]="attempts < 2" />
+  <img #armRight class="puppet__piece" [class.puppet__piece--ko]="attempts < 3" />
+  <img #legLeft class="puppet__piece" [class.puppet__piece--ko]="attempts < 4" />
+  <img #legRight class="puppet__piece" [class.puppet__piece--ko]="attempts < 5" />
+  <img #head class="puppet__piece" [class.puppet__piece--ko]="attempts < 6" />
 </div>

@@ -2,7 +2,7 @@
   <app-exit-game *ngIf="!(hangedData | async)?.riddle || (hangedData | async)?.phase === hangedPhase.END"></app-exit-game>
   <app-hanged-form *ngIf="!(hangedData | async)?.riddle" (start)="play($event)"></app-hanged-form>
   <ng-container *ngIf="(hangedData | async)?.riddle && (hangedData | async)?.phase !== hangedPhase.END">
-    <app-puppet></app-puppet>
+    <app-puppet [attempts]="(hangedData | async)?.attempts!"></app-puppet>
     <app-riddle [hangedData]="hangedData"></app-riddle>
     <app-letters [hangedData]="hangedData"></app-letters>
   </ng-container>

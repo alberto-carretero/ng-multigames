@@ -8,33 +8,9 @@
     height: 100%;
     position: absolute;
     background-repeat: no-repeat;
-  }
 
-  &__head {
-    background-image: url('../../../../../assets/images/hanged/head.svg');
-  }
-
-  &__body {
-    background-image: url('../../../../../assets/images/hanged/body.svg');
-  }
-
-  &__arm {
-    &--left {
-      background-image: url('../../../../../assets/images/hanged/arm-left.svg');
-    }
-
-    &--right {
-      background-image: url('../../../../../assets/images/hanged/arm-right.svg');
-    }
-  }
-
-  &__leg {
-    &--left {
-      background-image: url('../../../../../assets/images/hanged/leg-left.svg');
-    }
-
-    &--right {
-      background-image: url('../../../../../assets/images/hanged/leg-right.svg');
+    &--ko {
+      display: none;
     }
   }
 }
