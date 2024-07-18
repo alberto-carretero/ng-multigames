@@ -1,0 +1,13 @@
+@import '../../../../../assets/scss/variables';
+
+.last-game-choice {
+  &__player-two {
+    color: $rock-paper-scissors-navajowhite;
+  }
+
+  &__baffle {
+    background: -webkit-linear-gradient($rock-paper-scissors-navajowhite, $white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

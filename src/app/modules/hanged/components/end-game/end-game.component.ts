@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class EndGameComponent {
   @Input() attempts: number = 0;
+  @Input() riddle: string = '';
 
   public newGame() {
     window.location.reload();

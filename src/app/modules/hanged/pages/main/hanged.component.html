@@ -7,6 +7,6 @@
     <app-letters [hangedData]="hangedData"></app-letters>
   </ng-container>
   <ng-container *ngIf="(hangedData | async)?.phase === hangedPhase.END"
-    ><app-end-game [attempts]="(hangedData | async)?.attempts!"></app-end-game
+    ><app-end-game [attempts]="(hangedData | async)?.attempts!" [riddle]="(hangedData | async)?.riddle!"></app-end-game
   ></ng-container>
 </div>

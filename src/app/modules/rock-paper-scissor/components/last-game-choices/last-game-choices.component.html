@@ -1,0 +1,19 @@
+<div class="last-game-choice text-center mt-2 mb-3 fs-5">
+  <i class="bi bi-person me-2"></i>
+  <span
+    *ngIf="(playerOneChoice && mode === gameMode.COM) || (playerOneChoice && playerTwoChoice && mode === gameMode.PLAYERS); else emptyTmpl"
+    >{{ 'games.rockPaperScissor.' + playerOneChoice | translate }}</span
+  >
+  <span class="last-game-choice__baffle mx-2">/</span>
+  <ng-container *ngIf="mode === gameMode.COM">
+    <span *ngIf="comChoice; else emptyTmpl">{{ 'games.rockPaperScissor.' + comChoice | translate }}</span>
+  </ng-container>
+  <ng-container *ngIf="mode === gameMode.PLAYERS">
+    <span *ngIf="playerTwoChoice; else emptyTmpl">{{ 'games.rockPaperScissor.' + playerTwoChoice | translate }}</span>
+  </ng-container>
+  <i class="last-game-choice__player-two bi ms-2" [ngClass]="mode === gameMode.COM ? 'bi-pc-display' : 'bi-person'"></i>
+</div>
+
+<ng-template #emptyTmpl>
+  <span>-</span>
+</ng-template>

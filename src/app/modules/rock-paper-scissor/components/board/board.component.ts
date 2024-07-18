@@ -18,6 +18,9 @@ export class RockPaperScissorBoardComponent implements OnInit {
   public gameMode = GameModeType;
 
   public gameInfo: string = '';
+  public playerOneChoice: string = '';
+  public playerTwoChoice: string = '';
+  public comChoice: string = '';
 
   constructor(
     public rockPaperScissorService: RockPaperScissorService,
@@ -45,19 +48,22 @@ export class RockPaperScissorBoardComponent implements OnInit {
   }
 
   private playWithCom(userChoice: string) {
-    const playUserComp = userChoice + this.rockPaperScissorService.getComputerChoice();
-    this.rockPaperScissorService.game(playUserComp, this.mode);
+    this.playerOneChoice = userChoice;
+    this.comChoice = this.rockPaperScissorService.getComputerChoice();
+    this.rockPaperScissorService.game(userChoice + this.comChoice, this.mode);
   }
 
   private async playWithOtherPlayer(userChoice: string): Promise<void> {
     this.rockPaperScissorService.playPlayers += userChoice;
 
     if (this.rockPaperScissorService.currentPlayer === 1) {
+      this.playerOneChoice = userChoice;
       this.rockPaperScissorService.currentPlayer++;
       this.gameInfo = this.setTranslation('games.rockPaperScissor.choosePlayer', {
         number: this.rockPaperScissorService.currentPlayer,
       });
     } else {
+      this.playerTwoChoice = userChoice;
       await this.rockPaperScissorService.game(this.rockPaperScissorService.playPlayers, this.mode);
       this.rockPaperScissorService.resetTwoPlayersCurrentValues();
       this.resetGameInfo();
@@ -66,6 +72,10 @@ export class RockPaperScissorBoardComponent implements OnInit {
 
   private resetGameInfo() {
     this.gameInfo = this.setTranslation('games.rockPaperScissor.choosePlayer', { number: 1 });
+    setTimeout(() => {
+      this.playerOneChoice = '';
+      this.playerTwoChoice = '';
+    }, 500);
   }
 
   private setTranslation(text: string, param?: any): string {

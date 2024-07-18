@@ -1,9 +1,15 @@
 <div class="board container-fluid vh-100 py-4">
   <i class="board__back bi bi-arrow-left position-absolute top-0 end-0 fs-4 p-2" (click)="goBack()"></i>
   <app-rock-paper-scissor-score [gameStatus]="rockPaperScissorService.gameStatus" [mode]="mode"></app-rock-paper-scissor-score>
-  <div *ngIf="rockPaperScissorService.gameStatus | async as gameStatus" class="mb-3 text-center fs-2">
+  <div *ngIf="rockPaperScissorService.gameStatus | async as gameStatus" class="text-center fs-2">
     {{ gameStatus.message | translate }}
   </div>
+  <app-rock-paper-scissor-last-game-choices
+    [playerOneChoice]="playerOneChoice"
+    [playerTwoChoice]="playerTwoChoice"
+    [comChoice]="comChoice"
+    [mode]="mode"
+  ></app-rock-paper-scissor-last-game-choices>
   <div class="d-flex justify-content-center align-items-center">
     <div *ngFor="let option of optionImageUrls" class="board__option mx-3 p-3 border border-3 rounded" (click)="play(option)">
       <img src="/assets/images/rock-paper-scissors/{{ option }}.png" />
