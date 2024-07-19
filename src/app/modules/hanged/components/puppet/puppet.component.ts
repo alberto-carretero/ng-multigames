@@ -17,7 +17,7 @@ export class PuppetComponent implements AfterViewInit {
 
   public loading: boolean = true;
 
-  private urlBase: string = '../../../../../assets/images/hanged/';
+  private urlBase: string = 'assets/images/hanged/';
 
   async ngAfterViewInit(): Promise<void> {
     if (this.loading) {

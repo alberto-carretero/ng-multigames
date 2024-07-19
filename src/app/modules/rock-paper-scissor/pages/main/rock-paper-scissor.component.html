@@ -3,7 +3,7 @@
   <div *ngIf="displayMenu" class="d-flex flex-column justify-content-center align-items-center vh-100">
     <div class="d-flex my-4">
       <div *ngFor="let option of optionImageUrls" class="rock-paper-scissors__option mx-3 p-3 text-center">
-        <img src="/assets/images/rock-paper-scissors/{{ option }}.png" />
+        <img src="assets/images/rock-paper-scissors/{{ option }}.png" />
         <p class="mt-3 mb-0 fs-3">{{ 'games.rockPaperScissor.' + option | translate }}</p>
       </div>
     </div>
