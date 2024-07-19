@@ -40,7 +40,8 @@
       "explain": "El enigma oculto es '{{ riddle }}'",
       "validators": {
         "required": "Es obligatorio introducir un texto",
-        "pattern": "Solo se permiten letras"
+        "pattern": "Solo se permiten letras",
+        "maxLength": "Máximo 50 caracteres"
       }
     },
     "win": "¡Has ganado!",

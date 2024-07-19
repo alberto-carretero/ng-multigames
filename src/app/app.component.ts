@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguagesEnum } from './models/enums';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang('es');
+    const defaultLanguage = LanguagesEnum.ES;
+    this.translate.setDefaultLang(defaultLanguage);
+    localStorage.setItem('language', defaultLanguage);
   }
 }

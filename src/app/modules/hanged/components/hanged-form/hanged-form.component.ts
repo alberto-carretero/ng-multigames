@@ -10,7 +10,7 @@ export class HangedFormComponent {
   @Output() start: EventEmitter<string> = new EventEmitter<string>();
 
   public hangedForm: FormGroup = new FormGroup({
-    riddle: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
+    riddle: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*'), Validators.maxLength(50)]),
   });
 
   public startGame() {

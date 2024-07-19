@@ -20,6 +20,9 @@
       <span *ngIf="hangedForm.controls['riddle'].hasError('pattern')" class="text-danger">{{
         'games.hanged.validators.pattern' | translate
       }}</span>
+      <span *ngIf="hangedForm.controls['riddle'].hasError('maxlength')" class="text-danger">{{
+        'games.hanged.validators.maxLength' | translate
+      }}</span>
     </span>
   </form>
 </div>
