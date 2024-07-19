@@ -94,5 +94,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "ng-multigames"
 }
