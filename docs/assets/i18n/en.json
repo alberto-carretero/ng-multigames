@@ -1,0 +1,53 @@
+{
+  "generalSettings": "General Settings",
+  "language": "Language",
+  "spanish": "Spanish",
+  "english": "English",
+  "mode": {
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
+  "multigames": "Games",
+  "games": {
+    "play": "Play",
+    "rockPaperScissor": {
+      "title": "Rock/Paper/Scissors",
+      "description": "Compete against the CPU or a friend",
+      "rock": "Rock",
+      "paper": "Paper",
+      "scissor": "Scissors",
+      "user": "Player",
+      "device": "CPU",
+      "player": "Player {{ number }}",
+      "waitingForGame": "Waiting for move...",
+      "chooseOne": "Choose your move",
+      "choosePlayer": "Player {{ number }}'s turn",
+      "winPlayerOne": "Player 1 wins",
+      "winPlayerTwo": "Player 2 wins",
+      "draw": "Draw"
+    },
+    "pokemon": {
+      "title": "Pokemon",
+      "description": "Guess which Pokémon is hiding behind the shadow",
+      "totalScore": "Total Score"
+    },
+    "hanged": {
+      "title": "Hangman",
+      "description": "Guess the word or phrase before you run out of attempts",
+      "label": "Word/Phrase:",
+      "placeholder": "Enter a text...",
+      "startButton": "Start",
+      "explain": "The hidden riddle is '{{ riddle }}'",
+      "validators": {
+        "required": "Text input is required",
+        "pattern": "Only letters are allowed",
+        "maxLength": "Maximum 50 characters"
+      }
+    },
+    "win": "You won!",
+    "lose": "You lost!",
+    "gameOver": "Game Over",
+    "score": "Score",
+    "newGame": "New Game"
+  }
+}

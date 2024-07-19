@@ -1,0 +1,17 @@
+[
+  {
+    "imageUrl": "assets/images/rock-paper-scissors/rock-paper-scissors.jpg",
+    "url": "/rockpaperscissor",
+    "game": "rockPaperScissor"
+  },
+  {
+    "imageUrl": "assets/images/hanged/hanged.jpg",
+    "url": "/hanged",
+    "game": "hanged"
+  },
+  {
+    "imageUrl": "assets/images/pokemon/pokemon.jpg",
+    "url": "/pokemon",
+    "game": "pokemon"
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "generalSettings": "Configuración general",
+  "language": "Idioma",
+  "spanish": "Español",
+  "english": "Inglés",
+  "mode": {
+    "dark": "Modo noche",
+    "light": "Modo día"
+  },
+  "multigames": "Juegos",
+  "games": {
+    "play": "Jugar",
+    "rockPaperScissor": {
+      "title": "Piedra/papel/tijera",
+      "description": "Compite contra la CPU o contra un amig@",
+      "rock": "Piedra",
+      "paper": "Papel",
+      "scissor": "Tijera",
+      "user": "Jugador",
+      "device": "Comp.",
+      "player": "Jug. {{ number }}",
+      "waitingForGame": "Esperando jugada...",
+      "chooseOne": "Selecciona tu jugada",
+      "choosePlayer": "Turno del jugador {{ number }}",
+      "winPlayerOne": "Gana el jugador 1",
+      "winPlayerTwo": "Gana el jugador 2",
+      "draw": "Empate"
+    },
+    "pokemon": {
+      "title": "Pokemon",
+      "description": "Adivina qué pokémon se esconde tras la sombra",
+      "totalScore": "Puntuación total"
+    },
+    "hanged": {
+      "title": "Ahorcado",
+      "description": "Adivina la palabra o frase antes de agotar todos intentos",
+      "label": "Palabra/Frase:",
+      "placeholder": "Introduce un texto...",
+      "startButton": "Empezar",
+      "explain": "El enigma oculto es '{{ riddle }}'",
+      "validators": {
+        "required": "Es obligatorio introducir un texto",
+        "pattern": "Solo se permiten letras",
+        "maxLength": "Máximo 50 caracteres"
+      }
+    },
+    "win": "¡Has ganado!",
+    "lose": "¡Has perdido!",
+    "gameOver": "Fin del juego",
+    "score": "Puntuación",
+    "newGame": "Nuevo juego"
+  }
+}
