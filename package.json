@@ -1,10 +1,10 @@
 {
-  "name": "multigames",
+  "name": "ng-multigames",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production --base-href https://alberto-carretero.github.io/multigames/",
+    "build": "ng build --configuration production --base-href",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "prettier --write ."
