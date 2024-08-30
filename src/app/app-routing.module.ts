@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'hanged',
     loadChildren: () => import('./modules/hanged/hanged.module').then((m) => m.HangedModule),
   },
+  {
+    path: 'memory',
+    loadChildren: () => import('./modules/memory/memory.module').then((m) => m.HangedModule),
+  },
   { path: '**', redirectTo: '' },
 ];
 

@@ -1,0 +1,17 @@
+<section class="container">
+  <div class="card" *ngFor="let card of cards; let i = index">
+    <div
+      class="card__inner"
+      [class.card__inner--selected]="card?.selected"
+      [class.card__inner--locked]="card?.locked"
+      (click)="selectCard(i)"
+    >
+      <div class="card__front card__center">
+        <img src="assets/images/memory/puzzle.png" alt="Card game" style="width: 75%; height: 75%" />
+      </div>
+      <div class="card__back card__center">
+        <img src="{{ card.image }}" alt="{{ card.value }}" style="width: 65%; height: 65%" />
+      </div>
+    </div>
+  </div>
+</section>
