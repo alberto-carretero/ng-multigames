@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-end-game',
+  selector: 'app-pokemon-end-game',
   templateUrl: './end-game.component.html',
   styleUrls: ['./end-game.component.scss'],
 })
-export class EndGameComponent {
+export class PokemonEndGameComponent {
   // Score
   @Input() score: number = 0;
 

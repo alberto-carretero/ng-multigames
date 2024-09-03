@@ -1,6 +1,6 @@
 <div class="pokemon container-fluid vh-100 d-flex flex-column">
   <app-exit-game></app-exit-game>
-  <app-end-game *ngIf="isFinished" [score]="score"></app-end-game>
+  <app-pokemon-end-game *ngIf="isFinished" [score]="score"></app-pokemon-end-game>
   <img class="pokemon__logo position-absolute top-0 start-0 p-3" src="assets/images/pokemon/logo.png" />
   <img class="pokemon__ball position-absolute bottom-0 end-0 p-2" src="assets/images/pokemon/pokeball.png" />
 

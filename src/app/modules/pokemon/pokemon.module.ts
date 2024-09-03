@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ExitGameComponent } from 'src/app/components/exit-game/exit-game.component';
 import { BoardComponent } from './components/board/board.component';
 import { ButtonComponent } from './components/button/button.component';
-import { EndGameComponent } from './components/end-game/end-game.component';
+import { PokemonEndGameComponent } from './components/end-game/end-game.component';
 import { LivesComponent } from './components/lives/lives.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { PokemonImageComponent } from './components/pokemon-image/pokemon-image.component';
@@ -26,7 +26,7 @@ const routes: Routes = [
     ButtonComponent,
     BoardComponent,
     LivesComponent,
-    EndGameComponent,
+    PokemonEndGameComponent,
   ],
   imports: [RouterModule.forChild(routes), CommonModule, TranslateModule, ExitGameComponent],
 })

@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-end-game',
+  selector: 'app-hanged-end-game',
   templateUrl: './end-game.component.html',
   styleUrls: ['./end-game.component.scss'],
 })
-export class EndGameComponent {
+export class HangedEndGameComponent {
   @Input() attempts: number = 0;
   @Input() riddle: string = '';
 

@@ -1,18 +1,14 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-end-game',
+  selector: 'app-memory-end-game',
   templateUrl: './end-game.component.html',
   styleUrls: ['./end-game.component.scss'],
 })
-export class EndGameComponent {
-  // Score
-  @Input() score: number = 0;
+export class MemoryEndGameComponent {
+  @Input() isSuccessful: boolean = false;
 
-  /**
-   * Resets the game
-   */
-  public newGame(): void {
+  public newGame() {
     window.location.reload();
   }
 }

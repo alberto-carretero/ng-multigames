@@ -44,6 +44,15 @@
         "maxLength": "Maximum 50 characters"
       }
     },
+    "memory": {
+      "title": "Matched",
+      "description": "Find the match for each card in the shortest possible time",
+      "mode": {
+        "easy": "Easy",
+        "normal": "Normal",
+        "hard": "Hard"
+      }
+    },
     "win": "You won!",
     "lose": "You lost!",
     "gameOver": "Game Over",

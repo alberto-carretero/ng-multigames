@@ -1,8 +1,5 @@
-<div class="end-game vh-100 d-flex justify-content-center align-items-center flex-column">
-  <h1 class="end-game__title fw-bold text-center">{{ 'games.gameOver' | translate }}</h1>
-  <div class="end-game__score fw-bold mb-4">
-    <span>{{ 'games.pokemon.totalScore' | translate }}</span>
-    <span class="ms-3">{{ score }}</span>
-  </div>
-  <app-button [name]="'games.newGame' | translate" (click)="newGame()"></app-button>
+<div class="vh-100 d-flex justify-content-center align-items-center flex-column">
+  <h1 class="fs-1 fw-bold">{{ 'games.gameOver' | translate }}</h1>
+  <h1 class="fs-3">{{ isSuccessful ? ('games.win' | translate) : ('games.lose' | translate) }}</h1>
+  <button type="button" class="btn btn-dark m-1" (click)="newGame()">{{ 'games.newGame' | translate }}</button>
 </div>

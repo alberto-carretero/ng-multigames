@@ -1,7 +1,7 @@
 <div class="d-flex flex-column justify-content-center align-items-center vh-100">
   <div class="d-flex flex-column">
     <button *ngFor="let mode of gameModes" type="button" class="btn fs-3 my-2" (click)="selectMode(mode)">
-      {{ mode }}
+      {{ 'games.memory.mode.' + mode | lowercase | translate }}
     </button>
   </div>
 </div>

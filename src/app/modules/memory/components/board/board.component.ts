@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { BehaviorSubject, interval, Subscription } from 'rxjs';
 import { MemoryModeType } from '../../models/enums';
+import { IMemoryGameState } from '../../models/interfaces';
 
 @Component({
   selector: 'app-memory-board',
@@ -10,9 +11,12 @@ import { MemoryModeType } from '../../models/enums';
 })
 export class MemoryBoardComponent implements OnInit, OnDestroy {
   @Input() mode: MemoryModeType = MemoryModeType.NORMAL;
+  @Input() gameState: BehaviorSubject<IMemoryGameState> = new BehaviorSubject<IMemoryGameState>({
+    isFinished: false,
+    isSuccesful: false,
+  });
 
   @Output() back: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() isFinished: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public gameMode = MemoryModeType;
 
@@ -31,7 +35,7 @@ export class MemoryBoardComponent implements OnInit, OnDestroy {
 
     this.subscriptions.add(
       this.time.subscribe((secondsToEnd) => {
-        if (secondsToEnd <= 0) this.isFinished.emit(true);
+        if (secondsToEnd <= 0) this.gameState.next({ ...this.gameState.getValue(), isFinished: true, isSuccesful: false });
       }),
     );
   }
@@ -47,10 +51,10 @@ export class MemoryBoardComponent implements OnInit, OnDestroy {
   private getTime(): number {
     return (
       {
-        [MemoryModeType.EASY]: 45,
-        [MemoryModeType.NORMAL]: 60,
-        [MemoryModeType.HARD]: 90,
-      }[this.mode] ?? 60
+        [MemoryModeType.EASY]: 60,
+        [MemoryModeType.NORMAL]: 100,
+        [MemoryModeType.HARD]: 150,
+      }[this.mode] ?? 100
     );
   }
 }

@@ -4,3 +4,8 @@ export interface ICard {
   value: string;
   locked: boolean;
 }
+
+export interface IMemoryGameState {
+  isFinished: boolean;
+  isSuccesful: boolean;
+}

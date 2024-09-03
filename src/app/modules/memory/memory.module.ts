@@ -6,6 +6,7 @@ import { ExitGameComponent } from 'src/app/components/exit-game/exit-game.compon
 import { SpinnerComponent } from 'src/app/components/spinner/spinner.component';
 import { MemoryBoardComponent } from './components/board/board.component';
 import { CardsComponent } from './components/card/cards.component';
+import { MemoryEndGameComponent } from './components/end-game/end-game.component';
 import { GameModeComponent } from './components/game-mode/game-mode.component';
 import { MemoryComponent } from './pages/memory.component';
 
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [MemoryComponent, MemoryBoardComponent, CardsComponent, GameModeComponent],
+  declarations: [MemoryComponent, MemoryBoardComponent, CardsComponent, GameModeComponent, MemoryEndGameComponent],
   imports: [RouterModule.forChild(routes), CommonModule, TranslateModule, ExitGameComponent, SpinnerComponent],
 })
 export class HangedModule {}

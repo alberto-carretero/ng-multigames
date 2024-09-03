@@ -44,6 +44,15 @@
         "maxLength": "Máximo 50 caracteres"
       }
     },
+    "memory": {
+      "title": "Emparejados",
+      "description": "Encuentra la pareja para cada carta en el menor tiempo posible",
+      "mode": {
+        "easy": "Fácil",
+        "normal": "Normal",
+        "hard": "Difícil"
+      }
+    },
     "win": "¡Has ganado!",
     "lose": "¡Has perdido!",
     "gameOver": "Fin del juego",

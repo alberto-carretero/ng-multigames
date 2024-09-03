@@ -1,11 +1,14 @@
-<div class="memory container-fluid vh-100 d-flex flex-wrap flex-column justify-content-center align-items-center">
-  <app-exit-game *ngIf="displayMenu"></app-exit-game>
+<div
+  *ngIf="gameState | async as state"
+  class="memory container-fluid vh-100 d-flex flex-wrap flex-column justify-content-center align-items-center"
+>
+  <app-exit-game *ngIf="displayMenu || state.isFinished"></app-exit-game>
   <app-memory-game-mode *ngIf="displayMenu" (selectedMode)="selectMode($event)"></app-memory-game-mode>
   <app-memory-board
-    *ngIf="!displayMenu && !isFinished"
+    *ngIf="!displayMenu && !state.isFinished"
     [mode]="selectedMode"
+    [gameState]="gameState"
     (back)="showMenu($event)"
-    (isFinished)="endGame($event)"
   ></app-memory-board>
-  <p *ngIf="isFinished">FINNNNNNNNNNNNNNNNNn</p>
+  <app-memory-end-game *ngIf="state.isFinished" [isSuccessful]="state.isSuccesful"></app-memory-end-game>
 </div>
