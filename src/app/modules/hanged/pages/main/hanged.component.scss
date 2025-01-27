@@ -1,8 +1,9 @@
 @import '../../../../../assets/scss/variables';
 
 .hanged {
-  background-image: url('../../../../../assets/images/hanged/background.svg');
-  background-size: contain;
+  background-image: url('../../../../../assets/images/general/logo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 
   &::ng-deep app-exit-game i {
     color: $white;

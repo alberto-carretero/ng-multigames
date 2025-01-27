@@ -1,3 +1,11 @@
+@import '../../../../../assets/scss/variables';
+
+:host {
+  padding: 0.5rem;
+  background-color: rgba($color: $white, $alpha: 0.4);
+  border-radius: 10px;
+}
+
 .puppet {
   position: relative;
   height: 130px;

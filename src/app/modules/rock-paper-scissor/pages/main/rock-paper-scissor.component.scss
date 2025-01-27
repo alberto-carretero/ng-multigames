@@ -3,7 +3,9 @@
 .rock-paper-scissors {
   color: $white;
   text-shadow: 2px 2px 2px rgba($color: $rock-paper-scissors-brown, $alpha: 0.5);
-  background-image: linear-gradient(180deg, $rock-paper-scissors-brown, $rock-paper-scissors-brown-light);
+  background-image: url('../../../../../assets/images/general/logo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 
   & button {
     background-color: $rock-paper-scissors-brown;

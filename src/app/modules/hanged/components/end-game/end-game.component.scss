@@ -1,0 +1,12 @@
+@import '../../../../../assets/scss/_variables.scss';
+
+.hanged-end-game {
+  color: $white;
+  background-color: rgba($color: $black, $alpha: 0.9);
+  padding: 1rem;
+
+  & button {
+    background-color: $hanged-orange;
+    color: $white;
+  }
+}

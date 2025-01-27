@@ -1,3 +1,5 @@
+@import '../../../../../assets/scss/variables';
+
 :host {
   display: flex;
   justify-content: center;
@@ -5,7 +7,7 @@
   flex-wrap: wrap;
 }
 
-.cards {
+.card {
   margin: 0.75rem;
   cursor: pointer;
   perspective: 1000px;
@@ -44,6 +46,7 @@
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    background-color: $white;
   }
 
   &__back {

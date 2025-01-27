@@ -1,8 +1,8 @@
-<div *ngIf="(hangedData | async)?.letters as letters" class="d-flex flex-wrap justify-content-center align-items-center mt-4">
+<div *ngIf="(hangedData | async)?.letters as letters" class="d-flex flex-wrap justify-content-center align-items-center mt-3">
   <button
     *ngFor="let letter of letters"
     type="button"
-    class="letter btn btn-outline-dark m-1"
+    class="letter btn m-1"
     [disabled]="letter.isSelected"
     (click)="chooseLetter(letter.name)"
   >

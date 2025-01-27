@@ -6,10 +6,10 @@ import { ICard, IMemoryGameState } from '../../models/interfaces';
 
 @Component({
   selector: 'app-memory-cards',
-  templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.scss'],
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss'],
 })
-export class CardsComponent implements OnInit {
+export class CardComponent implements OnInit {
   @Input() mode: MemoryModeType = MemoryModeType.NORMAL;
   @Input() gameState: BehaviorSubject<IMemoryGameState> = new BehaviorSubject<IMemoryGameState>({
     isFinished: false,

@@ -15,7 +15,7 @@
     "game": "pokemon"
   },
   {
-    "imageUrl": "assets/images/memory/puzzle.png",
+    "imageUrl": "assets/images/memory/puzzle.jpg",
     "url": "/memory",
     "game": "memory"
   }

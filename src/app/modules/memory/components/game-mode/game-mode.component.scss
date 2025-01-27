@@ -1,0 +1,10 @@
+@import '../../../../../assets/scss/_variables.scss';
+
+.game-mode {
+  background-color: rgba($color: $black, $alpha: 0.9);
+  padding: 1rem;
+
+  & button {
+    color: $white;
+  }
+}
