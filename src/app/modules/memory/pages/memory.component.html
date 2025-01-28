@@ -10,5 +10,9 @@
     [gameState]="gameState"
     (back)="showMenu($event)"
   ></app-memory-board>
-  <app-memory-end-game *ngIf="state.isFinished" [isSuccessful]="state.isSuccesful"></app-memory-end-game>
+  <app-end-game *ngIf="state.isFinished">
+    <div main>
+      <h1 class="fs-3">{{ state.isSuccesful ? ('games.win' | translate) : ('games.lose' | translate) }}</h1>
+    </div>
+  </app-end-game>
 </div>

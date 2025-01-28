@@ -2,7 +2,7 @@
 
 .score {
   &__player-two {
-    color: $rock-paper-scissors-navajowhite;
+    color: $orange;
   }
 
   &__points {
@@ -11,7 +11,7 @@
   }
 
   &__baffle {
-    background: -webkit-linear-gradient($rock-paper-scissors-navajowhite, $white);
+    background: -webkit-linear-gradient($orange, $white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

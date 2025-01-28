@@ -2,25 +2,27 @@
 
 .rock-paper-scissors {
   color: $white;
-  text-shadow: 2px 2px 2px rgba($color: $rock-paper-scissors-brown, $alpha: 0.5);
   background-image: url('../../../../../assets/images/general/logo.png');
   background-size: cover;
   background-repeat: no-repeat;
 
   & button {
-    background-color: $rock-paper-scissors-brown;
+    background-color: $orange;
     color: $white;
+    border: 2px solid $white;
     width: 150px;
 
     &:hover {
       background-color: $white;
-      color: $rock-paper-scissors-brown;
-      border: 1px solid $rock-paper-scissors-brown;
+      color: $orange;
+      border: 2px solid $orange;
     }
   }
 
   &__option {
     width: fit-content;
+    background-color: $white;
+    color: $orange;
 
     & > img {
       width: 100%;

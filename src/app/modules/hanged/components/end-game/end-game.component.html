@@ -1,6 +1,0 @@
-<div class="hanged-end-game d-flex justify-content-center align-items-center flex-column">
-  <h1 class="fs-1 fw-bold">{{ 'games.gameOver' | translate }}</h1>
-  <p class="fs-3">{{ attempts > 0 ? ('games.win' | translate) : ('games.lose' | translate) }}</p>
-  <p class="text-center text-break fs-5">{{ 'games.hanged.explain' | translate: { riddle } }}</p>
-  <button type="button" class="btn m-1" (click)="newGame()">{{ 'games.newGame' | translate }}</button>
-</div>

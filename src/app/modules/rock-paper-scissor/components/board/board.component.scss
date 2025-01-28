@@ -1,6 +1,8 @@
 @import '../../../../../assets/scss/variables';
 
 .board {
+  background-color: rgba($color: $black, $alpha: 0.75);
+
   &__option {
     width: fit-content;
     cursor: pointer;
@@ -15,7 +17,7 @@
 
   &__game-info {
     &--two {
-      color: $rock-paper-scissors-navajowhite;
+      color: $orange;
     }
   }
 }

@@ -1,0 +1,5 @@
+<div class="end-game d-flex justify-content-center align-items-center flex-column">
+  <h1 class="fs-1 fw-bold">{{ 'games.gameOver' | translate }}</h1>
+  <ng-content select="[main]"> </ng-content>
+  <button type="button" class="btn m-1" (click)="newGame()">{{ 'games.newGame' | translate }}</button>
+</div>

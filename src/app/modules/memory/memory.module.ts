@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ExitGameComponent } from 'src/app/components/exit-game/exit-game.component';
 import { SpinnerComponent } from 'src/app/components/spinner/spinner.component';
+import { SharedModule } from '../shared/shared.module';
 import { MemoryBoardComponent } from './components/board/board.component';
 import { CardComponent } from './components/card/card.component';
-import { MemoryEndGameComponent } from './components/end-game/end-game.component';
 import { GameModeComponent } from './components/game-mode/game-mode.component';
 import { MemoryComponent } from './pages/memory.component';
 
@@ -18,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [MemoryComponent, MemoryBoardComponent, CardComponent, GameModeComponent, MemoryEndGameComponent],
-  imports: [RouterModule.forChild(routes), CommonModule, TranslateModule, ExitGameComponent, SpinnerComponent],
+  declarations: [MemoryComponent, MemoryBoardComponent, CardComponent, GameModeComponent],
+  imports: [RouterModule.forChild(routes), CommonModule, TranslateModule, ExitGameComponent, SpinnerComponent, SharedModule],
 })
 export class HangedModule {}

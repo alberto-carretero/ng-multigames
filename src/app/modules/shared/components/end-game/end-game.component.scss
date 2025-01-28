@@ -1,0 +1,12 @@
+@import '../../../../../assets/scss/variables';
+
+.end-game {
+  background-color: rgba($color: $black, $alpha: 0.9);
+  color: $white;
+  padding: 1rem;
+
+  & button {
+    background-color: $orange;
+    color: $white;
+  }
+}

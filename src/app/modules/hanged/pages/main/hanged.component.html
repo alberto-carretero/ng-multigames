@@ -1,12 +1,17 @@
-<div class="hanged container-fluid vh-100 d-flex flex-column justify-content-center align-items-center">
-  <app-exit-game *ngIf="!(hangedData | async)?.riddle || (hangedData | async)?.phase === hangedPhase.END"></app-exit-game>
-  <app-hanged-form *ngIf="!(hangedData | async)?.riddle" (start)="play($event)"></app-hanged-form>
-  <ng-container *ngIf="(hangedData | async)?.riddle && (hangedData | async)?.phase !== hangedPhase.END">
-    <app-puppet [attempts]="(hangedData | async)?.attempts!"></app-puppet>
+<div *ngIf="hangedData | async as data" class="hanged container-fluid vh-100 d-flex flex-column justify-content-center align-items-center">
+  <app-exit-game *ngIf="!data.riddle || data.phase === hangedPhase.END"></app-exit-game>
+  <app-hanged-form *ngIf="!data.riddle" (start)="play($event)"></app-hanged-form>
+  <ng-container *ngIf="data.riddle && data.phase !== hangedPhase.END">
+    <app-puppet [attempts]="data.attempts"></app-puppet>
     <app-riddle [hangedData]="hangedData"></app-riddle>
     <app-letters [hangedData]="hangedData"></app-letters>
   </ng-container>
-  <ng-container *ngIf="(hangedData | async)?.phase === hangedPhase.END"
-    ><app-hanged-end-game [attempts]="(hangedData | async)?.attempts!" [riddle]="(hangedData | async)?.riddle!"></app-hanged-end-game
-  ></ng-container>
+  <ng-container *ngIf="data.phase === hangedPhase.END">
+    <app-end-game>
+      <div main>
+        <p class="text-center fs-3">{{ data.attempts > 0 ? ('games.win' | translate) : ('games.lose' | translate) }}</p>
+        <p class="text-center text-break fs-5">{{ 'games.hanged.explain' | translate: { riddle: data.riddle } }}</p>
+      </div>
+    </app-end-game>
+  </ng-container>
 </div>

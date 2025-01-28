@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ExitGameComponent } from 'src/app/components/exit-game/exit-game.component';
 import { SpinnerComponent } from 'src/app/components/spinner/spinner.component';
-import { HangedEndGameComponent } from './components/end-game/end-game.component';
+import { SharedModule } from '../shared/shared.module';
 import { HangedFormComponent } from './components/hanged-form/hanged-form.component';
 import { LettersComponent } from './components/letters/letters.component';
 import { PuppetComponent } from './components/puppet/puppet.component';
@@ -20,7 +20,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HangedComponent, HangedFormComponent, LettersComponent, RiddleComponent, HangedEndGameComponent, PuppetComponent],
-  imports: [RouterModule.forChild(routes), CommonModule, TranslateModule, ReactiveFormsModule, ExitGameComponent, SpinnerComponent],
+  declarations: [HangedComponent, HangedFormComponent, LettersComponent, RiddleComponent, PuppetComponent],
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    TranslateModule,
+    ReactiveFormsModule,
+    ExitGameComponent,
+    SpinnerComponent,
+    SharedModule,
+  ],
 })
 export class HangedModule {}
